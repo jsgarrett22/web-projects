@@ -1,0 +1,23 @@
+body {
+    background-color: royalblue;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 300px;
+    border-bottom: 3px solid black;
+}
+
+button {
+    background-color: thistle;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+body p, h1 {
+    font-weight: bold;
+    color: whitesmoke;
+}

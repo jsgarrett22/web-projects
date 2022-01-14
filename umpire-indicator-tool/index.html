@@ -1,20 +1,65 @@
+<!-- UMPIRE INDICATOR TOOL
+
+    @description - digital version of the analog tool baseball / softball umpires often use to keep track of a game's important totals
+    @uses - mobile devices, smart watches seem optimal for use behind the plate?
+    @author: Joshua S. Garrett
+
+-->
+
 <!DOCTYPE html>
 <html lang="us">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/style.css">
         <title>Umpire Indicator Tool</title>
     </head>
     <body>
+        <h1>Umpire Indicator Tool</h1>
+
+        <!-- Dynamically create this table using js -->
+        <table>
+            <thead>
+                <th>INNING:</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>HOME</th>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th>VISITOR</th>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p id="current-inning">CURRENT INNING:</p>
         <p id="strikes">STRIKES:</p>
         <p id="balls">BALLS:</p>
         <p id="outs">OUTS:</p>
-        <p id="inning">INNING:</p>
         <form action="">
             <button id="strike-btn">STRIKE</button>
             <button id="ball-btn">BALL</button>
             <button id="out-btn">OUT</button>
             <button id="inning-btn">INNING</button>
+            <button id="home-btn">HOME</button>
+            <button id="visitor-btn">VISITOR</button>
         <br>
+        <button id="new-game-btn" type="reset">NEW GAME</button>
         <button id="reset-btn" type="reset">RESET</button>
         </form>
     </body>
