@@ -3,35 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Interest Calculator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="scripts/simple-interest.js"></script>
     </head>
     <body>
         <main>
             <section>
                 <h1>Simple Interest Calculator</h1>
-                <form action="">
+                <form id="simple-form" action="">
                     <label for="principal">Principal (P): $</label>
-                    <input type="text" id="principal">
+                    <input type="number" id="principal">
                     <br><br>
                     <label for="rate">Rate (R): %</label>
-                    <input type="text" id="rate">
+                    <input type="number" id="rate">
                     <br><br>
                     <label for="time">Time (t): </label>
-                    <input type="text" id="time">
+                    <input type="number" id="time">
                     <select>
-                        <option>Months</option>
                         <option>Years</option>
                     </select>
                     <br>
                     <button type="reset" id="simple-resetBtn">Reset</button>
-                    <button type="button" id="simple-calculateBtn" onclick="simpleInterest()">Calculate</button>
+                    <button type="button" id="simple-calculateBtn">Calculate</button>
                     <br>
                     <textarea id="simple-display">$</textarea>
                 </form>
             </section>
             <section>
                 <h1>Compound Interest Calculator</h1>
-                <form action="">
+                <form id="compound-form" action="">
                     <label for="principal">Principal (P): $</label>
                     <input type="text" id="principal">
                     <br><br>
@@ -53,5 +53,4 @@
             </section>
         </main>
     </body>
-
 </html>
