@@ -31,7 +31,7 @@ $(function () {
 /**
  * Converts a whole number into its percentage equivalent (decimal form)
  */
-const convertRateToPercentage = (rate) => rate / 100;
+const convertRateToPercentage = rate => rate / 100;
 
 /**
  * Calculates and returns the simple interest earned given a principal, specific rate, and frequency of interest (time)
@@ -41,4 +41,4 @@ const calculateSimpleInterest = (principal, rate, time) => principal * rate * ti
 /**
  * Utility function that returns the data type of a variable that can be used within console.log() or a template string
  */
-const type = (variable) => typeof variable;
+const type = variable => typeof variable;
