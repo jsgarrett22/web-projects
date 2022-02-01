@@ -1,8 +1,8 @@
 // Calculates the simple interest given the following formula:
 // Principal (p) x Rate (r) x Time (t)
 $(function () {
-    // rate text input
-
+    'use strict'
+    
     // When simple calculate button is clicked, return the interest earned on the account, given the terms.
     $('#simple-calculateBtn').click(() =>
     {
@@ -11,7 +11,7 @@ $(function () {
         let time = parseInt($('#time').val());
         let interest = 0;
         let total = 0;
-
+        
         if ((principal != 0) && (rate != 0) && (time != 0)) {
             if (rate > 0) {
                 rate = convertRateToPercentage(rate);
@@ -21,9 +21,16 @@ $(function () {
                 interest = calculateSimpleInterest(principal, rate, time);
                 total = principal + interest;
             }
-            alert(`Total: ${total}`);
+            alert(`Account Value: $${total} with $${interest} in earned interest.`);
+            // update the #simple-display element with the above alert
+            // update the #simple-display element 'hidden' attribute to false so that it shows up on page
         } else {
-            alert("At least one field wasn't filled out. Please fill out all fields in order to calculate.");
+            alert("Please fill out all fields.");
+            // Add dynamic validation using the bootstrap classes:
+            // <div class="is-valid">Valid entry.</div>
+            // <div class="is-invalid">Please enter a number.</div>
+            // If a field is missing a value or is zero, then it is invalid
+            // Otherwise, if the field contains a number greater than zero, then it is valid
         }
     });
 });
@@ -42,3 +49,6 @@ const calculateSimpleInterest = (principal, rate, time) => principal * rate * ti
  * Utility function that returns the data type of a variable that can be used within console.log() or a template string
  */
 const type = variable => typeof variable;
+
+// <div class="is-valid">Valid entry.</div>
+// <div class="is-invalid">Please enter a number.</div>
