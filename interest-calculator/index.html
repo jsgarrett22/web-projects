@@ -12,7 +12,7 @@
     <body>
 
         <div class="container">
-            <div class="row">
+            <div id="row-one" class="row">
               <div class="col">
                 <h1>Simple Interest Calculator</h1>
                 <form class="row g-3 needs-validation" action="">
@@ -30,18 +30,22 @@
                         <input type="number" id="time" class="form-control" placeholder="Time" required>
                         <label for="time">Frequency:</label>
                     </div>
-                    <select>
-                        <option>Years</option>
-                    </select>
+                    <div id='row-two' class="row">
+                        <div id="principal-validation-display" class="col-md-4">Invalid principal</div>
+                        <div id="rate-validation-display" class="col-md-3">Invalid rate.</div>
+                        <div id="time-validation-display" class="col-md-3">Validated!</div>
+                    </div>
                     <br>
                     <div class="col">
                         <button id="simple-calculateBtn" class="btn btn-primary" type="submit">Calculate</button>
                         <button id="simple-resetBtn" class="btn btn-secondary" type="reset">Reset</button>
                     </div>
                     <br>
-                    <input type="text" id="simple-display" class="form-control" aria-label="readonly input example" readonly hidden>
+                    <div id="simple-display"></div>
+                    <!-- <input type="text" id="simple-display" class="form-control" aria-label="readonly input example" readonly hidden> -->
                 </form>
               </div>
+
               <div class="col">
                 <h1>Compound Interest Calculator</h1>
                 <form id="compound-form" action="">
