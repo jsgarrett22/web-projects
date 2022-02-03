@@ -2,6 +2,8 @@
 // Principal (p) x Rate (r) x Time (t)
 $(function () {
     'use strict'
+
+    $('#row-two').hide();
     
     // When simple calculate button is clicked, return the interest earned on the account, given the terms.
     $('#simple-calculateBtn').click(() =>
@@ -12,18 +14,47 @@ $(function () {
         let interest = 0;
         let total = 0;
         
-        if ((principal != 0) && (rate != 0) && (time != 0)) {
-            if (rate > 0) {
-                rate = convertRateToPercentage(rate);
-                interest = calculateSimpleInterest(principal, rate, time);
-                total = principal + interest;
+        if ((!isNaN(principal)) && (!isNaN(rate)) && (!isNaN(time))) {
+        // all fields have a value
+            if (principal > 0) {
+                alert("Principal validated.");
+                // mark principal form element with 'is-valid'
+                if (rate > 0) {
+                    alert("Rate validated.");
+                    // mark rate form element with 'is-valid'
+                    if (time > 0) {
+                        alert("Time validated.");
+
+                        if (rate > 0) {
+                            rate = convertRateToPercentage(rate);
+                            interest = calculateSimpleInterest(principal, rate, time);
+                            total = principal + interest;
+                        } else {
+                            interest = calculateSimpleInterest(principal, rate, time);
+                            total = principal + interest;
+                        }
+                        $('#simple-display').html(`
+                            <p><strong>Starting Account Value:</strong>$${principal}</p>
+                            <p><strong>Earned Interest:</strong>$${interest}</p>
+                            <p><strong>Ending Account Value:</strong>$${total}</p>
+                        `);
+                        return false;
+                        // update the #simple-display element with the above alert
+                        // update the #simple-display element 'hidden' attribute to false so that it shows up on page
+                        // mark time form element with 'is-valid'
+                    } else {
+                        alert("Time must be greater than zero.");
+                        // mark time rate form element with 'is-invalid'
+                    }
+                } else {
+                    alert("Rate must be greater than zero.");
+                    // mark rate form element with 'is-invalid'
+                }
             } else {
-                interest = calculateSimpleInterest(principal, rate, time);
-                total = principal + interest;
+                alert("Principal must be greater than zero.");
+                $('#row-two #principal-validation-display').show();
+                // mark principal form element with 'is-invalid'
             }
-            alert(`Account Value: $${total} with $${interest} in earned interest.`);
-            // update the #simple-display element with the above alert
-            // update the #simple-display element 'hidden' attribute to false so that it shows up on page
         } else {
             alert("Please fill out all fields.");
             // Add dynamic validation using the bootstrap classes:
