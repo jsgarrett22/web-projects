@@ -1,86 +1,31 @@
-// implementing user object that will store a specific user's data for future use
-// (storing, retrieving, reporting)
-const user = {
-    _name: 'John Doe',
-    _accounts: [],
-    get name() {
-        return this._name;
-    },
-    get accounts() {
-        return this._accounts;
-    },
-    /**
-     * @param {string} newName
-     */
-    set name(newName) {
-        if (typeof newName === 'string') {
-            this._name = newName;
-        } else {
-            console.log('Type Error: Name must be a string.');
-        }
-    },
-    numOfAccounts() {
-        if (this.accounts.length) {
-            return this.accounts.length;
-        } else {
-            return "This user currently doesn't have an account";
-        }
-    },
-    /**
-     * @param {string} name 
-     * @param {number} amount
-     */
-    addAccount(name, amount) {
-        const newAccount = {
-            name,
-            amount
-        };
-        this.accounts.push(newAccount);
-    }
-};
-
-// TEST: add different accounts for the user
-user.addAccount('Savings', 50000);
-user.addAccount('Checking', 20000);
-user.addAccount('Brokerage2', 88550);
-
-user.accounts.forEach(element => {
-    console.log(`
-        Name: ${element.name}
-        Value: ${element.amount}
-    `);
-});
-
-
 // Calculates the simple interest given the following formula:
 // Principal (p) x Rate (r) x Time (t)
 $(function () {
-    'use strict'
+    'use strict';
 
     $('#row-two').hide();
     
-    // When simple calculate button is clicked, return the interest earned on the account, given the terms.
-    $('#simple-calculateBtn').click((e) =>
-    {
+    // SIMPLE INTEREST CALCULATE
+    $('#simple-calculateBtn').click((e) => {
+
         e.preventDefault();
-        let principal = parseInt($('#principal').val());
-        let rate = parseInt($('#rate').val());
-        let time = parseInt($('#time').val());
+        let principal = parseInt($('#simple-principal').val());
+        let rate = parseInt($('#simple-rate').val());
+        let time = parseInt($('#simple-time').val());
         let interest = 0;
         let total = 0;
         
         if ((!isNaN(principal)) && (!isNaN(rate)) && (!isNaN(time))) {
-        // all fields have a value
+            
+            resetDisplay();
+            
             if (principal > 0) {
                 $('#row-two').show();
-                $('#principal-validation-display').show().text("Validated");
-                // add bootstrap class 'was-validated'
+                $('#principal-validation-display').addClass('valid').text('Validated').show();
                 if (rate > 0) {
-                    $('#rate-validation-display').show().text("Validated");
-                    // add bootstrap class 'was-validated'
+                    $('#rate-validation-display').addClass('valid').text('Validated').show();
                     if (time > 0) {
-                        $('#time-validation-display').show().text("Validated");
-                        // add bootstrap class 'was-validated'
+                        $('#time-validation-display').addClass('valid').text('Validated').show();
                         if (rate > 0) {
                             rate = convertRateToPercentage(rate);
                             interest = calculateSimpleInterest(principal, rate, time);
@@ -98,26 +43,27 @@ $(function () {
                         // update the #simple-display element 'hidden' attribute to false so that it shows up on page
                         // mark time form element with 'is-valid'
                     } else {
-                        alert("Time must be greater than zero.");
-                        // mark time rate form element with 'is-invalid'
+                        $('#time-validation-display').addClass('invalid').text('Invalid').show();
                     }
                 } else {
-                    alert("Rate must be greater than zero.");
-                    // mark rate form element with 'is-invalid'
+                    $('#rate-validation-display').addClass('invalid').text('Invalid').show();
                 }
             } else {
-                alert("Principal must be greater than zero.");
-                $('#row-two #principal-validation-display').show();
-                // mark principal form element with 'is-invalid'
+                $('#row-two').show();
+                $('#principal-validation-display').addClass('invalid').text('Invalid').show();
             }
         } else {
-            alert("Please fill out all fields.");
-            console.log($('#two-row div')); // grab all the validation div's
-            // for every div:
-            // unhide
-            // change text to Invalid
-            // change class to boostrap invalid class needs-validation
+            $('#row-two').show();
+            $('#principal-validation-display').addClass('invalid').text('Invalid').show();
+            $('#rate-validation-display').addClass('invalid').text('Invalid').show();
+            $('#time-validation-display').addClass('invalid').text('Invalid').show();
         }
+    });
+
+    // SIMPLE INTEREST RESET
+    $('#simple-resetBtn').click((e) => {
+        resetDisplay();
+        $('#simple-display').empty();
     });
 });
 
@@ -136,5 +82,12 @@ const calculateSimpleInterest = (principal, rate, time) => principal * rate * ti
  */
 const type = variable => typeof variable;
 
-// <div class="is-valid">Valid entry.</div>
-// <div class="is-invalid">Please enter a number.</div>
+/**
+ * Utility function that resets validation elements and hides from view
+ */
+const resetDisplay = () => {
+    $('#row-two').hide();                                                  
+    $('#principal-validation-display').attr('class', 'col-md-4');
+    $('#rate-validation-display').attr('class', 'col-md-3');
+    $('#time-validation-display').attr('class', 'col-md-3');
+};
