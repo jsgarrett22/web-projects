@@ -1,0 +1,9 @@
+.valid {
+    font-weight: bolder;
+    color: green;
+}
+
+.invalid {
+    font-weight: bolder;
+    color: red;
+}
