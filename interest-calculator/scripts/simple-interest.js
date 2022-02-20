@@ -69,6 +69,7 @@ $(function () {
 
 /**
  * Converts a whole number into its percentage equivalent (decimal form)
+ * @param {number} rate to convert 
  */
 const convertRateToPercentage = rate => rate / 100;
 

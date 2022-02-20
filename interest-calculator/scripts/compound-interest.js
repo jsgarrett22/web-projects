@@ -1,26 +1,38 @@
-// Calculates interest compounding given the following formula:
-// A (accrued amount (principal + interest)) = P (Principal) (1 + (rate / frequency per time period) ^ frequency per time period * time
-// Given:
-// P: 100000
-// R: .05
-// Frequency: 1 (annual application of interest)
-// Time: 7 years
-// A = 100000 (1 + .05 / 1)^1*7
-
-const principal = 2000;
-const time = 5;
-const rate = convertRateToPercentage(8);
-const n = 12;
-
+/**
+ * Calculates the compound interest of an account given the parameters
+ * @param {number} principal
+ * @param {number} time in years
+ * @param {number} rate
+ * @param {number} frequency of interest additions
+ * @returns  interest earned
+ */
 const calculateCompoundInterest = (p, t, r, n) => {
     const amount = p * (Math.pow((1 + r / n), (n * t)));
     const interest = amount - p;
     return interest;
 };
 
-console.log(calculateCompoundInterest(principal, time, rate, n));
+$(function () {
+    $('#compound-calculateBtn').on("click", null, null, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-/**
- * Converts a whole number into its percentage equivalent (decimal form)
- */
- const convertRateToPercentage = rate => rate / 100;
+        const principal = $('#compound-principal').val();
+        const rate = convertRateToPercentage($('#compound-rate').val());
+        const years = $('#compound-years').val();
+        const frequency = $('#compound-frequency').val();
+        const interest = calculateCompoundInterest(principal, years, rate, frequency);
+        let displayMsg = "";
+
+        console.log(`Given ->
+                    Principal: ${principal}
+                    Rate: ${rate}
+                    Years: ${years}
+                    Frequency: ${frequency}
+                    Interest: ${interest}`);
+        
+        displayMsg += `In ${years} years, your investment will be worth ${principal} + ${interest}`;
+    
+        console.log(displayMsg);
+    });
+});
