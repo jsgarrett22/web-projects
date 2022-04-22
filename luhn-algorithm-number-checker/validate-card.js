@@ -55,4 +55,8 @@ const validateCred = (array) => {
     console.log(`isValid : ${sumDigit % 10 === 0 ? true : false}`);
 };
 
-validateCred(test);
+const validCards = batch.forEach(function(card) {
+  return validateCred(card);
+});
+
+validCards;
