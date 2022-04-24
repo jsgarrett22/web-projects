@@ -77,4 +77,26 @@ function findInvalidCards (array) {
   return invalidCards;
 }
 
-findInvalidCards(batch);
+/**
+ * Takes a nested array of invalid credit card numbers and returns an array of unique companies that incorrectly issued the numbers.
+ * @param {*} array nested array of invalid card numbers
+ * @returns  an array containing unique company values that have issued invalid credit card numbers
+ */
+function idInvalidCardCompanies(array) {
+  const companies = [...new Set(array.map(number => {   // creates a Set object from the initial mapped array and deconstructs it back into an array with only unique values
+    if (number[0] === 3) {
+      return "Amex (American Express)";
+    } else if (number[0] === 4) {
+      return "Visa";
+    } else if (number[0] === 5) {
+      return "Mastercard";
+    } else if (number[0] === 6) {
+      return "Discover";
+    } else {
+      return "Company not found";
+    }
+  }))];
+  return companies;
+}
+
+console.log(idInvalidCardCompanies(findInvalidCards(batch)));
