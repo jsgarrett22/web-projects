@@ -24,7 +24,11 @@ const test = [7, 9, 9, 2, 7, 3, 9, 8, 7, 1, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
-// returns true when an array contains digits of a valid credit card number or false if it is invalid assuming the last digit is the check digit and included
+/**
+ * Validates whether an array of numbers is valid or invalid based upon Luhn's Algorithm
+ * @param {*} array array of numbers to validate
+ * @returns whether the given number is valid or invalid
+ */
 const validateCred = (array) => {
     const tempArray = array.slice().reverse();
     const givenCheckDigit = tempArray[0];
@@ -39,8 +43,6 @@ const validateCred = (array) => {
     }
   }
 
-  console.log(tempArray)
-
   const sumDigit = tempArray.reduce(function(previousValue, currentValue) {
     return previousValue + currentValue;
   }, 0);
@@ -48,11 +50,53 @@ const validateCred = (array) => {
 
   isValid = sumDigit % 10 === 0 ? true : false;
 
-    console.log(`Credit Card : ${array}`)
-    console.log(`Given CheckDigit : ${givenCheckDigit}`);
-    console.log(`End -> TempArray : ${tempArray}`);
-    console.log(`SumDigit : ${sumDigit} % 10 = ${sumDigit % 10}`);
-    console.log(`isValid : ${sumDigit % 10 === 0 ? true : false}`);
+    console.log(`\tCredit Card : ${array}
+    \tGiven CheckDigit : ${givenCheckDigit}
+    \tEnd -> TempArray : ${tempArray}
+    \tSumDigit : ${sumDigit} % 10 = ${sumDigit % 10}
+    \tisValid : ${sumDigit % 10 === 0 ? true : false}
+    `);
+
+    return isValid;
 };
 
-validateCred(test);
+/**
+ * Takes in a nested array of numbers and returns the ones that are invalid based on Luhn's Alogorithm
+ * @param {*} array of nested numbers
+ * @returns a nested array of invalid numbers
+ */
+function findInvalidCards (array) {
+  const invalidCards = array.filter(number => {
+    return validateCred(number) === false;
+  });
+
+  invalidCards.forEach(number => {
+    console.log(number);
+  });
+
+  return invalidCards;
+}
+
+/**
+ * Takes a nested array of invalid credit card numbers and returns an array of unique companies that incorrectly issued the numbers.
+ * @param {*} array nested array of invalid card numbers
+ * @returns  an array containing unique company values that have issued invalid credit card numbers
+ */
+function idInvalidCardCompanies(array) {
+  const companies = [...new Set(array.map(number => {   // creates a Set object from the initial mapped array and deconstructs it back into an array with only unique values
+    if (number[0] === 3) {
+      return "Amex (American Express)";
+    } else if (number[0] === 4) {
+      return "Visa";
+    } else if (number[0] === 5) {
+      return "Mastercard";
+    } else if (number[0] === 6) {
+      return "Discover";
+    } else {
+      return "Company not found";
+    }
+  }))];
+  return companies;
+}
+
+console.log(idInvalidCardCompanies(findInvalidCards(batch)));
