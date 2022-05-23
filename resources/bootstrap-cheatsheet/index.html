@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Cheatsheet</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Top Navbar -->
+    <nav
+      class="navbar navbar-expand-lg bg-primary bg-gradient"
+      style="box-shadow: 2.5px 5px #212529"
+    >
+      <a
+        class="navbar-brand text-white"
+        href="https://getbootstrap.com/docs/5.2/getting-started/introduction/"
+        target="_blank"
+      >
+        <img
+          src="/icon/bootstrap.svg"
+          width="64"
+          height="64"
+          class="d-inline-block align-text-center"
+          style="margin: 1rem"
+        />
+        <strong>Bootstrap Cheatsheet</strong>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCl">
+        <a href="#">TOP</a>
+        <a href="#main-typography">TYPOGRAPHY</a>
+        <a href="#main-alignment">ALIGNMENT</a>
+        <a href="#main-blockquote">BLOCKQUOTE</a>
+        <a href="#main-lists">LISTS</a>
+        <a href="#main-colors">COLORS</a>
+        <a href="#main-buttons">BUTTONS</a>
+        <a href="#main-forms">FORMS</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="">
+      <!-- Typography -->
+      <section
+        id="main-typography"
+        class="container pt-2 my-5 bg-dark bg-gradient text-white"
+        style="border-radius: 1rem; box-shadow: 10px 10px 5px #aaaaaa"
+      >
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="display-3 text-center">Typography</h3>
+            <p class="lead">
+              A paragraph with the <code>.lead</code> class lets it stand out
+              from the normal paragraphs.
+            </p>
+            <p>
+              The <code>&lt;mark&gt;</code> tag can be used to
+              <mark>highlight text in Bootstrap.</mark>
+            </p>
+            <p>
+              The <code>&lt;del&gt;</code> tag is used to
+              <del>strike through text.</del> This is a good way to show
+              deprecation.
+            </p>
+            <ul class="list-unstyled text-center">
+              <li><code>&lt;u&gt;</code> - <u>used to underline text</u></li>
+              <li>
+                <code>&lt;strong&gt;</code> - <strong>used to bold text</strong>
+              </li>
+              <li>
+                <code>&lt;small&gt;</code> -
+                <small
+                  >used to create smaller, secondary text to a heading.</small
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALIGNMENT & TRANSFORMATION -->
+      <section
+        id="main-alignment"
+        class="container pt-2 my-5 bg-dark bg-gradient text-white"
+        style="border-radius: 1rem; box-shadow: 10px 10px 5px #aaaaaa"
+      >
+        <h3 class="display-6 text-center">Alignment</h3>
+        <hr />
+        <p class="text-start text-lowercase">Left aligned text in lowercase.</p>
+        <p class="text-center text-uppercase">
+          Center aligned text in all uppercase.
+        </p>
+        <p class="text-end text-capitalize">
+          Right aligned text with the first letter capitalized.
+        </p>
+        <p class="text-justify">Justified text.</p>
+        <p class="text-nowrap">No wrap text.</p>
+
+        <!-- QUICK FLOATS -->
+        <div class="float-start">Div floated to left.</div>
+        <div class="float-end">Div floated to right.</div>
+
+        <!-- CLEAR FLOAT -->
+        <div class="clearfix"></div>
+        <hr />
+      </section>
+
+      <!-- BLOCKQUOTE -->
+      <!-- The HTML spec requires that blockquote attribution be placed outside the <blockquote>. When providing attribution, wrap your <blockquote> in a <figure> and use a <figcaption> or a block level element (e.g., <p>) with the .blockquote-footer class. Be sure to wrap the name of the source work in <cite> as well.-->
+      <section
+        class="container pt-2 my-5 bg-dark bg-gradient text-white text-center"
+        style="border-radius: 1rem; box-shadow: 10px 10px 5px #aaaaaa"
+        id="main-blockquote"
+      >
+        <h3 class="display-6">Blockquote</h3>
+        <hr />
+        <figure class="text-end">
+          <blockquote class="blockquote">
+            <p>Hello there!</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Quote by <cite title="Obi-Wan Kenobi">Obi-Wan Kenobi</cite>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- LISTS -->
+      <section
+        class="container pt-2 my-5 bg-dark bg-gradient text-white text-center"
+        style="border-radius: 1rem; box-shadow: 10px 10px 5px #aaaaaa"
+        id="main-lists"
+      >
+        <h3 class="display-6">Lists</h3>
+        <hr />
+        <p>
+          <small
+            >Unordered list without the bullets using the
+            <code>.list-unstyled</code> class.</small
+          >
+        </p>
+        <ul class="list-unstyled">
+          <li>Item One</li>
+          <li>Item Two</li>
+          <li>Item Three</li>
+          <li>Item Four</li>
+        </ul>
+        <p class="text-center">
+          <small
+            >Unordered list without the bullets and inline. Only affects the
+            immediate child list item. Any nested lists will need the
+            <code>.list-inline</code> and
+            <code>.list-inline-item</code> classes.</small
+          >
+        </p>
+        <ul class="list-inline">
+          <li class="list-inline-item">Item One</li>
+          <li class="list-inline-item">Item Two</li>
+          <li class="list-inline-item">Item Three</li>
+          <li class="list-inline-item">Item Four</li>
+        </ul>
+      </section>
+
+      <!-- CODE -->
+      <section
+        class="container pt-2 my-5 bg-dark bg-gradient text-white text-center"
+        style="border-radius: 1rem; box-shadow: 10px 10px 5px #aaaaaa"
+      >
+        <h3 class="display-6 text-center">Code</h3>
+        <hr />
+        <code>&lt;h1&gt;Heading Text&lt;&frasl;h1&gt;</code>
+        <br />
+        Change directory with <kbd>cd</kbd>
+        <br />
+        To save a document, press <kbd>ctrl + s</kbd>
+      </section>
+
+      <!-- CONCEPTUAL COLORS -->
+      <section class="container mt-5" id="main-colors">
+        <h3 class="display-6 text-center">Conceptual Colors</h3>
+        <hr />
+        <p>
+          <small>
+            <ul class="list-inline text-center">
+              <li class="list-inline-item text-primary">Primary</li>
+              <li class="list-inline-item text-success">Success</li>
+              <li class="list-inline-item text-warning">Warning</li>
+              <li class="list-inline-item text-danger">Danger</li>
+              <li class="list-inline-item text-info">Info</li>
+              <li class="list-inline-item text-muted">Muted</li>
+            </ul>
+          </small>
+        </p>
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="col-sm-3 bg-primary bg-gradient p-3 m-3 text-light"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h4 class="text-center">PRIMARY</h4>
+              <p>
+                The primary class is used to show that the element is important.
+                This can also be applied to a background using
+                <code>.bg-primary</code>
+              </p>
+            </div>
+            <div
+              class="col-sm-3 border border-success bg-gradient p-3 m-3"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h3 class="text-center text-success">SUCCESS</h3>
+              <p>
+                The success class is used to show that the element is
+                successful. This can also be applied to a border using
+                <code>.border .border-success</code>. It is important to first
+                create the border, followed up by the border color class.
+              </p>
+            </div>
+            <div
+              class="col-sm-3 border border-warning bg-gradient p-3 m-3"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h3 class="text-center text-warning">WARNING</h3>
+              <p>
+                Warning can be used to notify a user that they are currently
+                missing a requirement. This can be useful for validation
+                feedback to the user with inputs.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-sm-3 border border-danger p-3 m-3"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h3 class="text-center text-danger">DANGER</h3>
+              <p>
+                Danger is often used to show that validation has either failed
+                or that a user is about to do something dangerous, like
+                <strong class="text-danger">delete</strong> something.
+              </p>
+            </div>
+            <div
+              class="col-sm-3 bg-info bg-gradient border border-warning p-3 m-3"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h3 class="text-center text-success">INFO</h3>
+              <p class="text-secondary">
+                Info is used to grab the attention and provide information to
+                the user. You can also mix and match different classes as
+                needed.
+              </p>
+            </div>
+            <div
+              class="col-sm-3 border border-muted bg-secondary p-3 m-3"
+              style="border-radius: 1rem; box-shadow: 2.5px 4px #212529"
+            >
+              <h3 class="text-center text-muted">MUTED</h3>
+              <p>Muted shows something that is not available.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- BUTTONS -->
+    <section class="container text-center mt-5" id="main-buttons">
+      <h3 class="display-6 text-center">Buttons</h3>
+      <hr />
+
+      <!-- Three Ways to create buttons -->
+      <button class="btn btn-default">Default</button>
+      <a href="#" class="btn btn-default" role="button">Link</a>
+      <input class="btn btn-default" type="button" value="Input" />
+
+      <!-- CONTEXTUAL BUTTONS -->
+
+      <div class="container text-center p-2">
+        <div class="row">
+          <div class="col p-1">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-warning">Warning</button>
+          </div>
+        </div>
+        <div class="row p-1">
+          <div class="col">
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-muted bg-secondary">Muted</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTON SIZES -->
+      <div class="container text-center p-1">
+        <button class="btn btn-default btn-xs bg-secondary">Small</button>
+        <button class="btn btn-default btn-sm bg-secondary">Small</button>
+        <button class="btn btn-default btn-md bg-secondary">Medium</button>
+        <button class="btn btn-default btn-lg bg-secondary">Large</button>
+        <br />
+
+        <!-- DISABLING BUTTONS -->
+        <input
+          type="submit"
+          value="Submit"
+          class="btn btn-success"
+          disabled="disabled"
+        />
+        <input type="submit" value="Submit" class="btn btn-success" disabled />
+        <input type="submit" value="Submit" class="btn btn-success disabled" />
+        <input type="submit" value="Submit" class="btn btn-success" />
+      </div>
+    </section>
+
+    <!-- FORMS -->
+    <section class="container mt-5" id="main-forms">
+      <h3 class="display-6 text-center">Forms</h3>
+      <hr />
+      <p class="text-center">
+        <small
+          >Inputs go inside a <code>.form-group</code> class and are given a
+          <code>.form-control</code> class.</small
+        >
+      </p>
+      <form>
+        <div class="form-group mb-3">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" placeholder="First Name" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" placeholder="Last Name" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="Email" />
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="form-label">Message</label>
+          <textarea class="form-control" placeholder="Add Message"></textarea>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label">Gender</label>
+          <select class="form-control">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="d-block">Upload File</label>
+          <input type="file" />
+          <p class="help-block">Only png and jpg allowed</p>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="checkbox" /> Check me out</label>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-default bg-primary text-white d-md-block"
+          value="Submit"
+        >
+          Submit
+        </button>
+      </form>
+
+      <!-- INLINE FORM (DOESNT WORK)-->
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" placeholder="Username" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Password" />
+        </div>
+        <div class="checkbox">
+          <label class="form-label"
+            >Remember Me <input type="checkbox"
+          /></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </section>
+
+    <!-- TABLES -->
+
+    <section class="container mt-5" id="main-tables">
+      <h3 class="display-6 text-center">
+        <a
+          class="link-unstyled"
+          href="https://getbootstrap.com/docs/5.2/content/tables/#overview"
+          target="_blank"
+          >Tables</a
+        >
+      </h3>
+
+      <hr />
+
+      <p class="text-center">
+        <small
+          >Inputs go inside a <code>.form-group</code> class and are given a
+          <code>.form-control</code> class.</small
+        >
+      </p>
+
+      <table class="table table-striped table-bordered table-hover table-sm">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+        <tr class="table-danger">
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>24</td>
+        </tr>
+        <tr class="table-success">
+          <td>John</td>
+          <td>Doe</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td>Stephanie</td>
+          <td>Landon</td>
+          <td>47</td>
+        </tr>
+        <tr>
+          <td>Mike</td>
+          <td>johnson</td>
+          <td>19</td>
+        </tr>
+      </table>
+
+      <!-- LIST GROUPS -->
+      <div class="container">
+        <h3 class="display-6 text-center">List Groups</h3>
+        <!-- Standard List Group -->
+        <ul class="list-group m-5">
+          <li class="list-group-item">Item One</li>
+          <li class="list-group-item">Item Two</li>
+          <li class="list-group-item">Item Three</li>
+          <li class="list-group-item">Item Four</li>
+          <li class="list-group-item">Item Five</li>
+        </ul>
+
+        <!-- List Group as a Menu -->
+        <div class="list-group m-5">
+          <a href="#" class="list-group-item text-center link-primary"
+            >Top<span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-up"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
+                /></svg></span
+          ></a>
+          <a href="#main-typography" class="list-group-item">Typography</a>
+          <a href="#main-lists" class="list-group-item">Lists</a>
+          <a href="#main-colors" class="list-group-item">Colors</a>
+          <a href="#main-forms" class="list-group-item">Forms</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Javascript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
