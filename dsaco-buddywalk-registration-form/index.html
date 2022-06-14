@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta author="Joshua S. Garrett" date="06/14/2022" />
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link href="./styles/style.css" rel="stylesheet" />
+
+    <title>Columbus Buddy Walk 2022 Registration</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="text-light text-center m-3">
+        <h1>Columbus Buddy Walk 2022 Registration</h1>
+      </header>
+      <div class="container">
+        <!-- Form Begin -->
+        <form class="form p-4 text-center">
+          <h2 class="text-center yellow-text">Make a Donation</h2>
+          <p class="text-center yellow-text lead">
+            Scroll down to complete the required information. <br />
+            Click the green
+            <span style="color: #5bb75b">'Complete Payment'</span> button to
+            finalize your donation.
+          </p>
+          <p class="text-center yellow-text">
+            <strong
+              >*Please note - a donation is not a registration for the event,
+              and does NOT include an event-shirt. <br />
+              If you'd like to register to walk, please revisit the homepage and
+              select the 'REGISTER' button.</strong
+            >
+          </p>
+          <hr />
+          <!-- Referral Input Field -->
+          <div class="mb-3">
+            <label for="referral" class="label"
+              >How did you hear about us?</label
+            >
+            <input
+              type="text"
+              list="referrals"
+              id="referral"
+              name="referral"
+              required
+            />
+            <datalist id="referrals">
+              <option value="Facebook"></option>
+              <option value="Instagram"></option>
+              <option value="Twitter"></option>
+              <option value="Youtube"></option>
+              <option value="Email/Newsletter"></option>
+              <option value="Family/Friend"></option>
+              <option value="Website/Search Engine"></option>
+              <option value="Magazine Article"></option>
+              <option value="Newspaper Story"></option>
+              <option value="TV/Cable News"></option>
+              <option value="Other"></option>
+            </datalist>
+          </div>
+          <!-- Donation Input Fields / Buttons -->
+          <div class="mb-3">
+            <label for="donation" class="label"
+              ><span style="color: red">*</span> Donation Amount</label
+            >
+            <input
+              type="number"
+              step="10"
+              min="10"
+              id="donation"
+              name="donation"
+              class="mb-3"
+              required
+            />
+            <br />
+            <input type="button" class="btn btn-yellow" value="$10" />
+            <input type="button" class="btn btn-yellow" value="$25" />
+            <input type="button" class="btn btn-yellow" value="$50" />
+            <input type="button" class="btn btn-yellow" value="$100" />
+          </div>
+          <!-- Privacy Checkbox -->
+          <div class="mb-3">
+            <input type="checkbox" id="private" name="private" />
+            <label for="private">Keep donation amount private</label>
+          </div>
+          <!-- Anonymous Checkbox -->
+          <div class="mb-3">
+            <input type="checkbox" id="anonymous" name="anonymous" />
+            <label for="anonymous">I want to donate anonymously</label>
+          </div>
+          <!-- Optional Fields -->
+          <div class="mb-3">
+            <label for="show-name-as" class="label"
+              >Show My Name As (optional)</label
+            >
+            <input
+              type="input"
+              id="show-name-as"
+              name="show-name-as"
+              placeholder="Ex: Smith Family"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="comment" class="label" style="vertical-align: top"
+              >Comment (optional)</label
+            >
+            <textarea
+              id="comment"
+              row="2"
+              cols="30"
+              placeholder="Leave words of encouragement or a message about why you donated - this will appear publicly."
+            >
+            </textarea>
+          </div>
+          <!-- Employer Match Field -->
+          <div class="mb-3">
+            <input type="checkbox" id="employer-match" name="employer-match" />
+            <label for="employer-match">Employer will match my donation</label>
+          </div>
+
+          <!-- Payment Details Inputs -->
+
+          <!-- Email -->
+          <div class="mb-2">
+            <label for="email" class="label"
+              ><span style="color: red">*</span> Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <!-- Name on Card -->
+          <div class="mb-2">
+            <label for="name" class="label"
+              ><span style="color: red">*</span> Name on Card</label
+            >
+            <input
+              type="text"
+              id="first-name"
+              name="name"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              id="last-name"
+              name="name"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <!-- Billing Address -->
+          <div class="mb-2">
+            <label for="billing-address" class="label"
+              ><span style="color: red">*</span> Billing Address</label
+            >
+            <input
+              type="text"
+              id="first-name"
+              name="name"
+              placeholder="Address Line 1"
+              required
+            />
+            <input
+              type="text"
+              id="billing-address"
+              name="billing-address"
+              placeholder="Address Line 2"
+              required
+            />
+          </div>
+          <!-- City -->
+          <div class="mb-2">
+            <label for="city" class="label"
+              ><span style="color: red">*</span> City</label
+            >
+            <input
+              type="text"
+              id="first-name"
+              name="name"
+              placeholder="City"
+              required
+            />
+          </div>
+          <!-- Country -->
+          <div class="mb-2">
+            <label for="country" class="label"
+              ><span style="color: red">*</span> Country</label
+            >
+            <select>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <!-- State / Province & Zip -->
+          <div class="mb-2">
+            <label for="state-zip" class="label"
+              ><span style="color: red">*</span> State / Province & Zip</label
+            >
+            <select aria-label="state select">
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="American Samoa">American Samoa</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="Ohio">Ohio</option>
+            </select>
+            <input
+              type="number"
+              id="zip"
+              name="zip"
+              placeholder="Zip"
+              minlength="5"
+              maxlength="5"
+            />
+          </div>
+          <!-- Phone -->
+          <div class="mb-2">
+            <label for="phone" class="label"
+              ><span style="color: red">*</span> Phone</label
+            >
+            <input type="phone" id="phone" name="phone" value="+1" />
+          </div>
+          <!-- Credit Card Number -->
+          <div class="mb-2">
+            <label for="card-number" class="label"
+              ><span style="color: red">*</span> Card Number</label
+            >
+            <input
+              type="number"
+              id="card-number"
+              name="card-number"
+              placeholder="Credit Card Number"
+            />
+          </div>
+          <!-- Card Expiration Date -->
+          <div class="mb-2">
+            <label for="card-expiration-month" class="label"
+              ><span style="color: red">*</span> Card Expiration Date</label
+            >
+            <select id="card-expiration-month" required>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+            <select id="card-expiration-year" required>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+              <option value="2031">2031</option>
+            </select>
+          </div>
+          <!-- Card CVV -->
+          <div class="mb-2">
+            <label for="card-cvv" class="label"
+              ><span style="color: red">*</span> Card CVV</label
+            >
+            <input
+              type="number"
+              id="card-cvv"
+              name="card-cvv"
+              minlength="3"
+              maxlength="3"
+              style="width: 3rem; -moz-appearance: textfield"
+              required
+            />
+          </div>
+          <!-- Card Processing Fee -->
+          <div class="mb-2">
+            <label for="card-fee" class="label"
+              ><span style="color: red">*</span> Card Processing Fee?</label
+            >
+            <label for="card-fee-yes" class="label">Yes</label>
+            <input
+              type="radio"
+              id="card-fee-yes"
+              name="card-fee"
+              value="Yes"
+              required
+            />
+            <label for="card-fee-no" class="label">No</label>
+            <input
+              type="radio"
+              id="card-fee-no"
+              name="card-fee"
+              value="No"
+              required
+            />
+          </div>
+          <p class="text-center">Total Charges: $<span>0.00</span></p>
+          <input
+            type="submit"
+            class="btn btn-submit"
+            value="Complete Payment"
+          />
+        </form>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="./scripts/form.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
